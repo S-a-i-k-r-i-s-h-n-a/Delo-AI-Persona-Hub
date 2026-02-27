@@ -18,6 +18,10 @@
 - **AI Engine:** Google Gemini 2.5 Flash API
 - **Bundler:** Webpack 5
 
+## 📦 Download & Install
+
+**Windows:** Download the latest standalone installer (`.exe`) from the [Releases](https://github.com/S-a-i-k-r-i-s-h-n-a/Delo-AI-Persona-Hub/releases) page for a one-click installation.
+
 ## 🚀 Getting Started
 
 1.  **Clone the repo:**
