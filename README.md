@@ -15,7 +15,7 @@
 
 - **Core:** React.js
 - **Styling:** Tailwind CSS + Vanilla CSS (Custom Scrollbars & Keyframes)
-- **AI Engine:** Google Gemini 1.5 Flash API
+- **AI Engine:** Google Gemini 2.5 Flash API
 - **Bundler:** Webpack 5
 
 ## 🚀 Getting Started
