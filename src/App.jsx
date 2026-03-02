@@ -1542,7 +1542,7 @@ export default function Home() {
                       className={`group flex w-full ${isUser ? "justify-end" : "justify-start"}`}
                     >
                       <div
-                        className={`flex max-w-[80%] ${isUser ? "flex-row-reverse" : "flex-row"} items-start gap-3`}
+                        className={`flex max-w-[75%] ${isUser ? "flex-row-reverse" : "flex-row"} items-start gap-3`}
                       >
                         <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/10 bg-white/5 shrink-0 flex items-center justify-center text-slate-400">
                           {isUser ? (
@@ -1589,7 +1589,7 @@ export default function Home() {
                                       style={syntaxTheme}
                                       language={match[1]}
                                       PreTag="div"
-                                      className="rounded-xl !bg-black/40 !my-2 border border-white/10"
+                                      className="rounded-xl !bg-black/40 !my-2 border border-white/10 !w-full !max-w-full overflow-x-auto custom-scrollbar"
                                       {...props}
                                     >
                                       {String(children).replace(/\n$/, "")}
@@ -1668,7 +1668,7 @@ export default function Home() {
                         key={`typing-${id}`}
                         className="group flex w-full justify-start animate-in slide-in-from-bottom-2 fade-in duration-300"
                       >
-                        <div className="flex max-w-[80%] flex-row items-end gap-3">
+                        <div className="flex max-w-[75%] flex-row items-end gap-3">
                           <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/10 bg-white/5 shrink-0 flex items-center justify-center text-slate-400">
                             {persona.avatar ? (
                               <img
