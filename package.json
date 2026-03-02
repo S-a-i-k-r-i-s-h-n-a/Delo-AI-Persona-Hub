@@ -1,6 +1,6 @@
 {
   "name": "delo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AI persona chat interface powered by Gemini.",
   "main": "main.js",
   "scripts": {
