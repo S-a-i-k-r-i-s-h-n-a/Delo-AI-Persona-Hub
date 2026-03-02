@@ -1542,7 +1542,7 @@ export default function Home() {
                       className={`group flex w-full ${isUser ? "justify-end" : "justify-start"}`}
                     >
                       <div
-                        className={`flex max-w-[75%] ${isUser ? "flex-row-reverse" : "flex-row"} items-start gap-3`}
+                        className={`flex max-w-[72%] ${isUser ? "flex-row-reverse" : "flex-row"} items-start gap-3 min-w-0`}
                       >
                         <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/10 bg-white/5 shrink-0 flex items-center justify-center text-slate-400">
                           {isUser ? (
@@ -1566,12 +1566,12 @@ export default function Home() {
                           )}
                         </div>
                         <div
-                          className={`relative px-4 py-2 rounded-2xl ${isUser ? theme.userBubble : theme.botBubble}`}
+                          className={`relative px-4 py-2 rounded-2xl ${isUser ? theme.userBubble : theme.botBubble} min-w-0 overflow-hidden`}
                         >
                           <div className="text-[10px] font-black uppercase tracking-widest opacity-50 mb-1">
                             {isUser ? "YOU" : m.sender}
                           </div>
-                          <div className="text-sm prose prose-invert max-w-none prose-p:leading-relaxed prose-pre:p-0 prose-pre:bg-transparent">
+                          <div className="text-sm prose prose-invert max-w-full prose-p:leading-relaxed prose-pre:p-0 prose-pre:bg-transparent">
                             <ReactMarkdown
                               components={{
                                 code({
@@ -1668,7 +1668,7 @@ export default function Home() {
                         key={`typing-${id}`}
                         className="group flex w-full justify-start animate-in slide-in-from-bottom-2 fade-in duration-300"
                       >
-                        <div className="flex max-w-[75%] flex-row items-end gap-3">
+                        <div className="flex max-w-[72%] flex-row items-end gap-3 min-w-0">
                           <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/10 bg-white/5 shrink-0 flex items-center justify-center text-slate-400">
                             {persona.avatar ? (
                               <img
