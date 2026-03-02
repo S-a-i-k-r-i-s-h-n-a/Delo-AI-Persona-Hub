@@ -26,6 +26,9 @@ import {
   LogIn,
   MoreVertical,
 } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark as syntaxTheme } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const DEFAULT_PERSONAS = [
   {
@@ -1568,7 +1571,66 @@ export default function Home() {
                           <div className="text-[10px] font-black uppercase tracking-widest opacity-50 mb-1">
                             {isUser ? "YOU" : m.sender}
                           </div>
-                          <div className="text-sm">{m.text}</div>
+                          <div className="text-sm prose prose-invert max-w-none prose-p:leading-relaxed prose-pre:p-0 prose-pre:bg-transparent">
+                            <ReactMarkdown
+                              components={{
+                                code({
+                                  node,
+                                  inline,
+                                  className,
+                                  children,
+                                  ...props
+                                }) {
+                                  const match = /language-(\w+)/.exec(
+                                    className || "",
+                                  );
+                                  return !inline && match ? (
+                                    <SyntaxHighlighter
+                                      style={syntaxTheme}
+                                      language={match[1]}
+                                      PreTag="div"
+                                      className="rounded-xl !bg-black/40 !my-2 border border-white/10"
+                                      {...props}
+                                    >
+                                      {String(children).replace(/\n$/, "")}
+                                    </SyntaxHighlighter>
+                                  ) : (
+                                    <code
+                                      className="bg-black/30 px-1.5 py-0.5 rounded-md font-mono text-xs text-blue-300"
+                                      {...props}
+                                    >
+                                      {children}
+                                    </code>
+                                  );
+                                },
+                                p: ({ children }) => (
+                                  <p className="mb-0 overflow-wrap-anywhere break-words">
+                                    {children}
+                                  </p>
+                                ),
+                                ul: ({ children }) => (
+                                  <ul className="list-disc ml-4 space-y-1 my-2">
+                                    {children}
+                                  </ul>
+                                ),
+                                ol: ({ children }) => (
+                                  <ol className="list-decimal ml-4 space-y-1 my-2">
+                                    {children}
+                                  </ol>
+                                ),
+                                li: ({ children }) => (
+                                  <li className="leading-normal">{children}</li>
+                                ),
+                                strong: ({ children }) => (
+                                  <strong className="font-bold text-white/90">
+                                    {children}
+                                  </strong>
+                                ),
+                              }}
+                            >
+                              {m.text}
+                            </ReactMarkdown>
+                          </div>
 
                           {/* Hover Actions */}
                           <div
